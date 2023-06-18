@@ -73,15 +73,17 @@
 
     <label for="nname" style="color: white;font-family: cursive;font-size: 20px;">Input Series Of Numbers</label>
 
-    <input type="text" id="nname" name="nname" size="32" style="padding: 8px 0px;" onkeyup="numberCalc()" >
-   
-
-    <p id="max" class="task3">Max:</p>
-    <p id="min" class="task3">Min:</p>
-    <p id="sum" class="task3">Sum:</p>
-    <p id="average" class="task3">Average:</p>
-    <p id="reverse" class="task3" style="color: white;">Reverse:</p>
-
+    <form>
+        <label for="numbers" style="color: white;font-family: cursive;font-size: 20px;">Enter a series of numbers (separated by commas):</label><br>
+        <input type="text" id="numbers" name="numbers" oninput="calculate()"><br><br>
+        <!--<button type="button" onclick="resetResults()">Reset</button>-->
+      </form>
+      <br>
+      <p id="max" class="cal">Max:</p>
+      <p id="min" class="cal">Min:</p>
+      <p id="sum" class="cal">Sum:</p>
+      <p id="average" class="cal">Avg:</p>
+      <p id="reverseOrder" class="cal">Reverse order:</p>
 
 
 
@@ -152,4 +154,64 @@
     
 
 </body>
+<script>
+    function calculate() {
+      var input = document.getElementById("numbers").value;
+      var numbers = input.split(",").map(function(item) {
+        return item.trim();
+      }).filter(function(item) {
+        return item !== "";
+      });
+
+      if (numbers.length === 0) {
+        resetResults();
+        return;
+      }
+
+      var max = Number(numbers[0]);
+      var min = Number(numbers[0]);
+      var sum = 0;
+      var count = 0;
+
+      for (var i = 0; i < numbers.length; i++) {
+        var currentNumber = Number(numbers[i]);
+        if (!isNaN(currentNumber)) {
+          sum += currentNumber;
+          count++;
+          if (currentNumber > max) {
+            max = currentNumber;
+          }
+          if (currentNumber < min) {
+            min = currentNumber;
+          }
+        }
+      }
+
+      if (count === 0) {
+        resetResults();
+        return;
+      }
+
+      var average = sum / count;
+      var reverseOrder = numbers.reverse().join(", ");
+
+      document.getElementById("max").textContent = "Max: " + max;
+      document.getElementById("min").textContent = "Min: " + min;
+      document.getElementById("sum").textContent = "Sum: " + sum;
+      document.getElementById("average").textContent = "Average: " + average;
+      document.getElementById("reverseOrder").textContent =
+        "Reverse Order: " + reverseOrder;
+    }
+
+    function resetResults() {
+        
+
+      document.getElementById("max").textContent = "";
+      document.getElementById("min").textContent = "";
+      document.getElementById("sum").textContent = "";
+      document.getElementById("average").textContent = "";
+      document.getElementById("reverseOrder").textContent = "";
+      
+    }
+  </script>
 </html>
