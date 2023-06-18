@@ -49,7 +49,7 @@ function convert(){
    
 }
 //part2t1
-function numberCalc(){
+/*function numberCalc(){
   var inputs= document.getElementById("nname").value;
 
   var myString= inputs.split(",");
@@ -72,7 +72,7 @@ mySum= mySum+ parseFloat(myString[i]);
   document.getElementById("sum").innerHTML= "Sum: "+mySum;
   document.getElementById("average").innerHTML= "Avg: "+myAvg;
 
-}
+}*/
 
 //part4
 
