@@ -11,6 +11,10 @@ min-height: 480vh;
 background-image: url('assets/bg.png');
 
 }
+#factDisplay{
+  padding: 10px;
+  font-size: 20px;
+}
 #nav{
     padding-top: 40px;
   }
@@ -32,10 +36,6 @@ background-image: url('assets/bg.png');
     display: flex;
     margin: auto;
 
-  }
-  #factDisplay{
-    padding: 20px;
-    font-size: 20px;
   }
   #quote{
     max-height: 20vh;
@@ -101,7 +101,7 @@ margin-bottom: 100px;
 /*task3*/
 #t3{
 width: 50%;
-min-height: 50vh;
+min-height: 60vh;
 margin: auto;
 margin-top: 40vh;
 text-align: center;
@@ -124,20 +124,20 @@ border: 2px solid rgb(112, 255, 141);
 }
 
 /*task4*/
+textarea{
+  width: 100%;
+}
 #lastPart{
   width: 85%;
   margin: auto;
   border: 2px solid rgb(254, 61, 106);
   height: 100vh;
-  margin-top: 50vh;
+  margin-top: 80vh;
 }
 .content{
-width: 70%;
+width: 80%;
   margin: auto;
   margin-top: 5vh;
-}
-textarea{
-  width: 100%;
 }
 .bbtns{
 
