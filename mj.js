@@ -1,6 +1,9 @@
 
 function newFact() {
-  var facts = ["You, darkness, of whom I am born- I love you more than the flame that limits the world to the circle it illumines and excludes the rest.", "Keep smiling, because life is a beautiful thing and there's so much to smile about", "Life is either a daring adventure or nothing at all."];
+  var facts = ["You, darkness, of whom I am born- I love you more than the flame that limits the world to the circle it illumines and excludes the rest.", "Javascript is the duct tape of the Internet.",
+  "Keep smiling, because life is a beautiful thing and there's so much to smile about", 
+  "Life is either a daring adventure or nothing at all."];
+
 var randomFact = Math.floor(Math.random() * facts.length);
   document.getElementById('factDisplay').innerHTML = facts[randomFact];
 }
@@ -11,6 +14,7 @@ function redd(){
 
   document.getElementById("factDisplay").style.fontFamily = "cursive";
   document.getElementById("factDisplay").style.fontSize = "22px";
+  document.getElementById("quote").style.padding = "20px";
 }
 
 function yellow(){
@@ -19,6 +23,8 @@ function yellow(){
 
   document.getElementById("factDisplay").style.fontFamily = "Courier";
   document.getElementById("factDisplay").style.fontSize = "24px";
+  document.getElementById("quote").style.padding = "20px";
+}
 }
 
 function green(){
@@ -27,6 +33,7 @@ function green(){
 
   document.getElementById("factDisplay").style.fontFamily = "Arial";
   document.getElementById("factDisplay").style.fontSize = "20px";
+  document.getElementById("quote").style.padding = "20px";
 }
 
 function blue(){
@@ -35,6 +42,8 @@ function blue(){
 
   document.getElementById("factDisplay").style.fontFamily = "fantasy";
   document.getElementById("factDisplay").style.fontSize = "22px";
+  document.getElementById("quote").style.padding = "20px";
+}
 
 }
 //color pick end
@@ -48,7 +57,8 @@ function convert(){
   }
    
 }
-//part2t1
+//part2t1 embedded in html do it later
+
 /*function numberCalc(){
   var inputs= document.getElementById("nname").value;
 
@@ -79,7 +89,8 @@ mySum= mySum+ parseFloat(myString[i]);
 function upperCase(){
    counter=0;
  var txt= document.getElementById("tname").value;
- if(counter%2==0){ txt=txt.toUpperCase();}
+ if(counter % 2 ==0){ 
+  txt=txt.toUpperCase();}
  else{ txt=txt.tolowerCase();}
 
  counter++;
